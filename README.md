@@ -35,6 +35,6 @@ Step 4: In a command mode of the "init.lua" file, type command of "PackerSync", 
       or type "X" (captial x) to delete a selected language server
       Note: you can custermize the language server through the Manson GUI.
 
-Step 4: Trouble shooting of "TreeSitter" plugin, if there is any error associated with "TreeSitter"
+Step 5: Trouble shooting of "TreeSitter" plugin, if there is any error associated with "TreeSitter"
       a. Type ":TSUpdate" to solve issue
       b. Or comment the "TreeSitter" in the "$HOME/.config/nvim/init.lua"
