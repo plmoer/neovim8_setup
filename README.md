@@ -1,3 +1,6 @@
+Author: plmoer@gmail.com
+Date: Nov. 6, 2022
+
 OS: Ubuntu 20.04 / Mac OS 12.0
 Neovim (version 0.8)
 Git Reference: https://github.com/LunarVim/Neovim-from-scratch
