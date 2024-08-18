@@ -32,6 +32,14 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("morhetz/gruvbox")
 
+	-- use("folke/tokyonight")
+	use({
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	})
+
 	-- essential plugins
 	use("tpope/vim-surround") -- add, delete, change surroundings (add: ysw", delete: ds")
 	use("vim-scripts/ReplaceWithRegister") -- replace with register contents using motion (gr + motion)

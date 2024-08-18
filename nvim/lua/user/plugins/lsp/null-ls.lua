@@ -6,15 +6,15 @@ end
 
 -- for conciseness
 local formatting = null_ls.builtins.formatting -- to setup formatters
-local diagnostics = null_ls.builtins.diagnostics -- to setup linters
+-- local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 
 -- to setup format on save
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local sources = {
 	formatting.autopep8,
-	formatting.clang_format,
-	formatting.eslint,
+	-- formatting.clang_format,
+	-- formatting.eslint,
 	formatting.stylua,
 	-- formatting.ccls,
 	-- formatting.clangd,
@@ -25,7 +25,8 @@ null_ls.setup({
 	on_attach = function(client)
 		-- if client.resolved_capabilities.document_formatting then
 		if client.server_capabilities.documentFormattingProvider then
-			vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+			-- vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+			vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
 		end
 	end,
 })
