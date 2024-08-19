@@ -109,6 +109,17 @@ return packer.startup(function(use)
 	-- git fugitive
 	use("tpope/vim-fugitive")
 
+	--markdown
+	-- install without yarn or npm
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		setup = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
