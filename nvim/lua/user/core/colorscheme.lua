@@ -1,7 +1,7 @@
 -- set colorscheme to nightfly with protected call
 -- in case it isn't installed
--- local status, _ = pcall(vim.cmd, "colorscheme gruvbox")
-local status, _ = pcall(vim.cmd, "colorscheme tokyonight")
+local status, _ = pcall(vim.cmd, "colorscheme gruvbox")
+-- local status, _ = pcall(vim.cmd, "colorscheme tokyonight")
 vim.cmd([[hi SpellBad cterm=underline ctermfg=203 guifg=#ff5f5f]])
 vim.cmd([[hi SpellLocal cterm=underline ctermfg=203 guifg=#ff5f5f]])
 vim.cmd([[hi SpellRare cterm=underline ctermfg=203 guifg=#ff5f5f]])
