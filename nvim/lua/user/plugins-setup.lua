@@ -32,13 +32,8 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("morhetz/gruvbox")
 
-	-- use("folke/tokyonight")
-	use({
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-	})
+	-- nightfly
+	use({ "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 })
 
 	-- essential plugins
 	use("tpope/vim-surround") -- add, delete, change surroundings (add: ysw", delete: ds")
@@ -118,6 +113,13 @@ return packer.startup(function(use)
 			vim.g.mkdp_filetypes = { "markdown" }
 		end,
 		ft = { "markdown" },
+	})
+
+	use({
+		"stevearc/conform.nvim",
+		config = function()
+			require("conform").setup()
+		end,
 	})
 
 	if packer_bootstrap then
