@@ -69,18 +69,6 @@ return {
 
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
-    local servers = { "pyright", "html", "cssls", "bashls", "lua_ls", "pylsp" }
-    for _, server in ipairs(servers) do
-      lspconfig[server].setup({
-        capabilities = capabilities,
-      })
-    end
-
-    -- Adjust LSP settings for better performance
-    require("lspconfig").pyright.setup({
-      -- Adjust the frequency of LSP requests
-      debounce_text_changes = 150, -- Wait for 150ms after typing before sending a request
-    })
 
     -- Change the Diagnostic symbols in the sign column (gutter)
     -- (not in youtube nvim video)
@@ -146,3 +134,4 @@ return {
     })
   end,
 }
+

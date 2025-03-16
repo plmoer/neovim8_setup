@@ -71,7 +71,7 @@ opt.directory = "/.vim/tmp/swap//" -- swap files
 -- Commands mode
 opt.wildmenu = true -- on TAB, complete options for system command
 opt.wildignore =
-	"deps,.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc"
+  "deps,.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc"
 
 opt.background = "dark"
 --vim.g.material_style = "palenight"
