@@ -69,7 +69,8 @@ return {
 
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
-    local servers = { "pyright", "html", "cssls", "bashls", "lua_ls", "pylsp" }
+    -- local servers = { "pyright", "html", "cssls", "bashls", "lua_ls", "pylsp" }
+    local servers = { "pyright", "html", "cssls", "bashls", "lua_ls" } -- remove "pylsp" to prevent from python linting. Another way to prevent python linting, is to run :LspStop pylsp
     for _, server in ipairs(servers) do
       lspconfig[server].setup({
         capabilities = capabilities,
