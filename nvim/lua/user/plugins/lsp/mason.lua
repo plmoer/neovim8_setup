@@ -4,16 +4,20 @@ return {
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
+
   config = function()
-    -- import mason
+    -- Core Mason
     local mason = require("mason")
 
-    -- import mason-lspconfig
+    -- LSP support
     local mason_lspconfig = require("mason-lspconfig")
 
+    -- Formatters / Linters / DAP installers
     local mason_tool_installer = require("mason-tool-installer")
 
-    -- enable mason and configure icons
+    ------------------------------------------------------------------------
+    -- Mason UI
+    ------------------------------------------------------------------------
     mason.setup({
       ui = {
         icons = {
@@ -24,31 +28,57 @@ return {
       },
     })
 
+    ------------------------------------------------------------------------
+    -- LSP Servers to install automatically
+    ------------------------------------------------------------------------
     mason_lspconfig.setup({
-      -- list of servers for mason to install
       ensure_installed = {
-        -- "tsserver",
+        -- Web / Frontend
         "html",
         "cssls",
-        "tailwindcss",
-        -- "svelte",
-        "lua_ls",
-        "graphql",
         "emmet_ls",
+        "tailwindcss",
+        "graphql",
         "prismals",
+
+        -- Python
         "pyright",
+
+        -- Lua
+        "lua_ls",
+
+        -- Add more if needed:
+        "tsserver",
+        -- "svelte",
+        -- "bashls",
+        -- "jsonls",
       },
     })
 
+    ------------------------------------------------------------------------
+    -- Formatters / Linters (Conform.nvim + LSP + Diagnostics)
+    ------------------------------------------------------------------------
     mason_tool_installer.setup({
       ensure_installed = {
-        "prettier", -- prettier formatter
-        "stylua", -- lua formatter
-        "isort", -- python formatter
-        "black", -- python formatter
-        "pylint",
+
+        -- Web / JS / TS
+        "prettier",
         "eslint_d",
-        "pyright",
+
+        -- Lua
+        "stylua",
+
+        -- Python
+        "black",
+        "isort",
+        "pylint",
+
+        -- Add if needed by other languages:
+        -- "gofmt", "goimports",
+        -- "rustfmt",
+        -- "shfmt",
+        -- "xmlformatter",
+        -- "sqlfluff",
       },
     })
   end,
