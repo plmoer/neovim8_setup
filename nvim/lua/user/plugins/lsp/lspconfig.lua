@@ -30,11 +30,17 @@ return {
           vim.keymap.set(mode, lhs, rhs, opts)
         end
 
+        
         map("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
-        map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", "Definitions")
-        map("n", "gi", "<cmd>Telescope lsp_implementations<CR>", "Implementations")
-        map("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", "Type definitions")
-        map("n", "gR", "<cmd>Telescope lsp_references<CR>", "References")
+        map("n", "gd", vim.lsp.buf.definition, "Definition")
+        map("n", "gi", vim.lsp.buf.implementation, "Go to implementation")
+        map("n", "gt", vim.lsp.buf.type_definition, "Go to type definition")
+        map("n", "gR", vim.lsp.buf.references, "Go to references")
+        -- map("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
+        -- map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", "Definitions")
+        -- map("n", "gi", "<cmd>Telescope lsp_implementations<CR>", "Implementations")
+        -- map("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", "Type definitions")
+        -- map("n", "gR", "<cmd>Telescope lsp_references<CR>", "References")
 
         map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code action")
         map("n", "<leader>rn", vim.lsp.buf.rename, "Rename")
