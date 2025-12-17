@@ -48,7 +48,7 @@ return {
         "lua_ls",
 
         -- Add more if needed:
-        "tsserver",
+        "ts_ls",
         -- "svelte",
         -- "bashls",
         -- "jsonls",
