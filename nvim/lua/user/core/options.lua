@@ -94,3 +94,12 @@ opt.iskeyword:append("-")
 -- improve command-line completion
 opt.wildignore =
   "deps,.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc"
+
+-- -------------------------------------------------------
+-- Filetypes
+-- -------------------------------------------------------
+vim.filetype.add({
+  extension = {
+    json = "jsonc", -- allow comments in .json files
+  },
+})
